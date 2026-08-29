@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 320px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0f1117;
+  color: #e5e7eb;
+}
+
+.popup {
+  padding: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #2d3139;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+.header h1 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #ff5500;
+}
+
+.subtitle {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.section {
+  margin-bottom: 14px;
+}
+
+.section h2 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #9ca3af;
+  margin-bottom: 8px;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.toggle input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #ff5500;
+  cursor: pointer;
+}
+
+.hint {
+  font-size: 11px;
+  color: #6b7280;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.hint a {
+  color: #ff5500;
+  text-decoration: none;
+}
+
+.hint a:hover {
+  text-decoration: underline;
+}
+
+#apiKey {
+  width: 100%;
+  padding: 8px 10px;
+  background: #1a1d24;
+  border: 1px solid #374151;
+  border-radius: 6px;
+  color: #e5e7eb;
+  font-size: 12px;
+  outline: none;
+}
+
+#apiKey:focus {
+  border-color: #ff5500;
+}
+
+.footer {
+  text-align: center;
+  padding-top: 8px;
+  border-top: 1px solid #2d3139;
+}
+
+#status {
+  font-size: 11px;
+  color: #22c55e;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#status.visible {
+  opacity: 1;
+}

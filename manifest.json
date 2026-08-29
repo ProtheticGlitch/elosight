@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "EloSight",
+  "version": "1.0.0",
+  "description": "EloSight for FACEIT — ELO analytics, win probability, map stats, extended levels & automation",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+    },
+    "default_title": "EloSight"
+  },
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.faceit.com/*"],
+      "js": ["src/injected-bridge.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["*://*.faceit.com/*"],
+      "js": [
+        "src/utils/elo-global.js",
+        "src/modules/matchroom-global.js",
+        "src/modules/matchhistory-global.js",
+        "src/modules/profile-global.js",
+        "src/modules/automation-global.js",
+        "src/content-global.js"
+      ],
+      "css": ["src/styles/content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": ["storage"],
+  "host_permissions": [
+    "*://*.faceit.com/*",
+    "https://open.faceit.com/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/styles/content.css"],
+      "matches": ["*://*.faceit.com/*"]
+    }
+  ]
+}

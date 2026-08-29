@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EloSight</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup">
+    <header class="header">
+      <img src="../icons/icon48.png" alt="" class="logo">
+      <div>
+        <h1>EloSight</h1>
+        <p class="subtitle">See the ELO. Play smarter.</p>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>Матчрум</h2>
+      <label class="toggle">
+        <input type="checkbox" id="showTeamElo" checked>
+        <span>Средний ELO команд</span>
+      </label>
+      <label class="toggle">
+        <input type="checkbox" id="showPlayerElo" checked>
+        <span>ELO игроков</span>
+      </label>
+      <label class="toggle">
+        <input type="checkbox" id="showWinProbability" checked>
+        <span>Шанс победы</span>
+      </label>
+      <label class="toggle">
+        <input type="checkbox" id="showExtendedLevels" checked>
+        <span>Расширенные уровни (L11+)</span>
+      </label>
+    </section>
+
+    <section class="section">
+      <h2>Профиль и история</h2>
+      <label class="toggle">
+        <input type="checkbox" id="showMapStats" checked>
+        <span>Статистика по картам</span>
+      </label>
+      <label class="toggle">
+        <input type="checkbox" id="showMatchHistoryElo" checked>
+        <span>ELO в истории матчей</span>
+      </label>
+    </section>
+
+    <section class="section">
+      <h2>Автоматизация</h2>
+      <label class="toggle">
+        <input type="checkbox" id="autoReady">
+        <span>Авто Ready</span>
+      </label>
+      <label class="toggle">
+        <input type="checkbox" id="autoAcceptInvite">
+        <span>Авто-принятие приглашений</span>
+      </label>
+    </section>
+
+    <section class="section">
+      <h2>FACEIT API</h2>
+      <p class="hint">Ключ нужен для расширенной статистики. Получите на <a href="https://developers.faceit.com/" target="_blank">developers.faceit.com</a></p>
+      <input type="password" id="apiKey" placeholder="API Key (необязательно)" autocomplete="off">
+    </section>
+
+    <footer class="footer">
+      <span id="status">Сохранено</span>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
